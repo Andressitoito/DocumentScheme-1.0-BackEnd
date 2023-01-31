@@ -1,7 +1,5 @@
 const express = require("express");
-const user = require("../models/user");
 const userSchema = require("../models/user");
-const data = require('../models/data')
 const dataSchema = require('../models/data')
 
 const router = express.Router();
@@ -19,7 +17,7 @@ router.post("/users", (req, res) => {
   });
 });
 
-router.post("/data", (req, res) => {
+router.post("/users/signin", (req, res) => {
  const data = dataSchema(req.body);
  data
   .save()
@@ -29,8 +27,6 @@ router.post("/data", (req, res) => {
    res.json({ message: error });
   });
 });
-
-
 
 // GET ALL USERS
 
